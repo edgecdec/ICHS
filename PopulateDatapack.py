@@ -1,4 +1,5 @@
 from Team import Team
+from CreateHelmetsFunction import createHelmetsFunction
 import csv
 
 basePath = 'ICHS/data/ichs/functions/team_setup/'
@@ -25,7 +26,7 @@ for teamData in teamDataDict:
     i += 1
 
 # Create Teams and add leader to them
-with open(basePath + "create_teams.mcfunction", "w") as outfile:
+with open(f"{basePath}create_teams.mcfunction", "w") as outfile:
     for team in teams:
         curTeamNum = team.getNumber()
         outfile.write(f'#Create Team {curTeamNum} and add leader\n')
@@ -38,4 +39,5 @@ with open(basePath + "create_teams.mcfunction", "w") as outfile:
 #     for team in teams:
 #         outfile.write(f"{team.number},{team.teamColorName},{team.hexCode},{team.block}\n")
 
-
+# Create Team Helmets
+createHelmetsFunction(teams, f"{basePath}put_helmets_on.mcfunction")
