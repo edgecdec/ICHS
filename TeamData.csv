@@ -1,0 +1,15 @@
+Team Number,Team Color Name,Hex Code,Block
+1,aqua,55FFFF,light_gray_glazed_terracotta
+2,blue,5555FF,light_blue_concrete
+3,dark_aqua,00AAAA,cyan_concrete
+4,dark_blue,0000AA,blue_concrete
+5,dark_gray,555555,gray_concrete
+6,dark_green,00AA00,green_concrete
+7,dark_purple,AA00AA,purple_concrete
+8,dark_red,AA0000,crimson_nylium
+9,gold,FFAA00,yellow_glazed_terracotta
+10,gray,AAAAAA,light_gray_concrete
+11,green,55FF55,lime_concrete
+12,light_purple,FF55FF,magenta_concrete
+13,red,FF5555,red_concrete
+14,yellow,FFFF55,yellow_concrete
