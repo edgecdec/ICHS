@@ -1,9 +1,19 @@
 from Team import Team
 from CreateHelmetsFunction import createHelmetsFunction
 import csv
+import os
+import zipfile
 
 basePath = 'ICHS/data/ichs/functions/team_setup/'
 callPath = 'ichs:team_setup/'
+
+def zipDir(path, ziph):
+    # ziph is zipfile handle
+    for root, dirs, files in os.walk(path):
+        for file in files:
+            ziph.write(os.path.join(root, file),
+                       os.path.relpath(os.path.join(root, file),
+                                       os.path.join(path, '..')))
 
 teams = []
 
@@ -41,3 +51,8 @@ with open(f"{basePath}create_teams.mcfunction", "w") as outfile:
 
 # Create Team Helmets
 createHelmetsFunction(teams, f"{basePath}put_helmets_on.mcfunction")
+
+#Turn whole datapack into .zip file
+zipf = zipfile.ZipFile('ICHS.zip', 'w', zipfile.ZIP_DEFLATED)
+zipDir('ICHS/', zipf)
+zipf.close()
